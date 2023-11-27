@@ -67,3 +67,11 @@ console.log(num2);
 let lightSpeed = 186000;
 console.log(lightSpeed.toExponential());
 
+// STRINGS //
+
+// create primitive string type variable
+let str = 'Hello World!';
+console.log(typeof str); //would be string
+//create object type string variable
+let strObj = new String('Js is awesome');
+console.log(typeof strObj); //would be object
