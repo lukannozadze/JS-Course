@@ -75,3 +75,10 @@ console.log(typeof str); //would be string
 //create object type string variable
 let strObj = new String('Js is awesome');
 console.log(typeof strObj); //would be object
+
+// STRING METHODS//
+const myVariable = "Mathematics";
+console.log(myVariable.length); //11
+console.log(myVariable.charAt(6)); //a
+console.log(myVariable.charAt(9999)); //empty string
+console.log(myVariable.indexOf("Mat")); //returns index where 'Mat' starts with (0)
