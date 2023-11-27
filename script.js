@@ -40,5 +40,9 @@ console.log(taskFloatNum);
 
 const PI = 3.141596254;
 
-const NUM = PI.toFixed(2);
-console.log(NUM);
+let number = PI.toFixed(2);
+number = PI.toPrecision(5);
+console.log(number);
+
+let number2 = 5.2450;
+console.log(number2.toPrecision(3));
