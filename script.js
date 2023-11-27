@@ -48,3 +48,19 @@ let number2 = 10000000;
 console.log(number2.toExponential());
 let number3 = 0.0000005;
 console.log(number3.toExponential());
+
+// ### TASK ### //
+
+// 1.Create a variable called PI and set it's value to 3.14159. Use
+// the correct Number method to display only three digits after the
+// decimal point, log this to the console.
+const pi = 3.14159;
+console.log(pi.toFixed(3));
+// 2. Using the previous PI variable, create a new variable called num2 
+// and use the correct Number method to display a total of three digits only
+let num2 = pi.toPrecision(3);
+console.log(num2);
+// 3. Create a variable called lightSpeed abd set it's value to 186999.
+// Use the .toExponential() method to log this new display in the console
+let lightSpeed = 186000;
+console.log(lightSpeed.toExponential());
