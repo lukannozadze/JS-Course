@@ -44,5 +44,7 @@ let number = PI.toFixed(2);
 number = PI.toPrecision(5);
 console.log(number);
 
-let number2 = 5.2450;
-console.log(number2.toPrecision(3));
+let number2 = 10000000;
+console.log(number2.toExponential());
+let number3 = 0.0000005;
+console.log(number3.toExponential());
