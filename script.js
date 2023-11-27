@@ -87,3 +87,14 @@ console.log(myVariable.lastIndexOf("t")); //7
 console.log(myVariable.slice(2,5)); //the
 console.log(myVariable.toUpperCase()); //MATHEMATICS
 console.log(myVariable.toLowerCase()); //mathematics
+
+console.log(myVariable.includes('div')) //false
+console.log(myVariable.includes('math')) //false because it's case sensitive
+console.log(myVariable.includes('Math')) //true
+
+const newStr = 'my name is anton';
+console.log(newStr.split(' ')); // ['my', 'name', 'is', 'anton']
+
+const str1= '2+2';
+const str2 = new String('2+2');
+console.log(eval(str1),eval(str2));
