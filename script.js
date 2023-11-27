@@ -15,3 +15,11 @@ console.log(expMill);
 
 let smallNum = 1e-6;
 console.log(smallNum);
+
+//behind the scenes primitive number is wrapped into built-in object to access all number methods and then is back to primitive type
+let score = new Number(100);
+console.log(typeof score);
+
+//score is an object, decNum is primitive type but both of them can access Number methods
+console.log(score.toFixed());
+console.log(decNum.toFixed());
