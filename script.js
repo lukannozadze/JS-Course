@@ -23,3 +23,15 @@ console.log(typeof score);
 //score is an object, decNum is primitive type but both of them can access Number methods
 console.log(score.toFixed());
 console.log(decNum.toFixed());
+
+
+// ### TASK ### //
+
+// 1.Declare and initialise a variabe with value of 100,000, log this to console
+let taskNum = 1e5;
+console.log(taskNum);
+// 2.In the console, identify the data type of the variable
+console.log(typeof taskNum);
+// Create a float data type, and log this type of the console
+let taskFloatNum = 2.25;
+console.log(taskFloatNum);
