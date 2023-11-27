@@ -35,3 +35,10 @@ console.log(typeof taskNum);
 // Create a float data type, and log this type of the console
 let taskFloatNum = 2.25;
 console.log(taskFloatNum);
+
+// NUMBER METHODS
+
+const PI = 3.141596254;
+
+const NUM = PI.toFixed(2);
+console.log(NUM);
