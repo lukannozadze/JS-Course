@@ -82,3 +82,8 @@ console.log(myVariable.length); //11
 console.log(myVariable.charAt(6)); //a
 console.log(myVariable.charAt(9999)); //empty string
 console.log(myVariable.indexOf("Mat")); //returns index where 'Mat' starts with (0)
+console.log(myVariable.lastIndexOf("t")); //7
+
+console.log(myVariable.slice(2,5)); //the
+console.log(myVariable.toUpperCase()); //MATHEMATICS
+console.log(myVariable.toLowerCase()); //mathematics
