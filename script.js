@@ -20,6 +20,8 @@ console.log(smallNum);
 let score = new Number(100);
 console.log(typeof score);
 
+console.log(typeof score.valueOf());
+
 //score is an object, decNum is primitive type but both of them can access Number methods
 console.log(score.toFixed());
 console.log(decNum.toFixed());
@@ -64,3 +66,4 @@ console.log(num2);
 // Use the .toExponential() method to log this new display in the console
 let lightSpeed = 186000;
 console.log(lightSpeed.toExponential());
+
