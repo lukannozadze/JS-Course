@@ -100,10 +100,12 @@ const str2 = new String('2+2');
 console.log(eval(str1),eval(str2));
 
 // VAR LET CONST
-
+//difference between var and let is that var is function-scoped which means that var is accessible everywhere inside function
+//when let is block-scoped - it is accessible only inside block
 function start(){
-    for(let i =0;i<5;i++){
+    for(var i =0;i<5;i++){
         console.log(i);
     }
+    console.log(i);
 }
 start();
