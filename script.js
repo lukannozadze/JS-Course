@@ -104,8 +104,10 @@ console.log(eval(str1),eval(str2));
 //when let is block-scoped - it is accessible only inside block
 function start(){
     for(var i =0;i<5;i++){
-        console.log(i);
+      if(true){
+        var color = 'red';
+      }
     }
-    console.log(i);
+    console.log(color);
 }
 start();
