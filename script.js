@@ -125,3 +125,17 @@ function sayHello() {
 let bye = function sayBye(){
  console.log('bye');
 }
+
+console.log(varVariable); //it will be undefined, but no error
+
+var varVariable = 'true';
+
+console.log(varVariable); //true
+
+
+
+// console.log(letVariable); //error
+
+let letVariable = 'false';
+
+console.log(letVariable) //false
