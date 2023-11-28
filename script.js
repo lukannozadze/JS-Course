@@ -98,3 +98,12 @@ console.log(newStr.split(' ')); // ['my', 'name', 'is', 'anton']
 const str1= '2+2';
 const str2 = new String('2+2');
 console.log(eval(str1),eval(str2));
+
+// VAR LET CONST
+
+function start(){
+    for(let i =0;i<5;i++){
+        console.log(i);
+    }
+}
+start();
