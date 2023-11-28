@@ -62,7 +62,7 @@ console.log(pi.toFixed(3));
 // and use the correct Number method to display a total of three digits only
 let num2 = pi.toPrecision(3);
 console.log(num2);
-// 3. Create a variable called lightSpeed abd set it's value to 186999.
+// 3. Create a variable called lightSpeed and set it's value to 186999.
 // Use the .toExponential() method to log this new display in the console
 let lightSpeed = 186000;
 console.log(lightSpeed.toExponential());
@@ -111,3 +111,17 @@ function start(){
     console.log(color);
 }
 start();
+
+// second problem of the var keyword is that when you declare variable it automatically assigns to the browser window object
+var name = 'luka'; //if i declare same variable in third-party library, this global variable will override it
+let age = 21;
+
+//this way of declaring function makes itselft global for browser object also
+function sayHello() {
+    console.log('hi');
+}
+
+//but if we assign it let keyword, this function will not be global 
+let bye = function sayBye(){
+ console.log('bye');
+}
