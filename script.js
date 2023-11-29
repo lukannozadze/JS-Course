@@ -158,3 +158,22 @@ function sumFunc(a,b){
 console.log(x);
 
 var x= 5;
+
+{
+    console.log(y);
+    let y = 4;
+}
+
+//this is nice example what will happen if we don't know hoisting concept in js
+// at first we might think deleteShoppingCart should not be executed
+// but because of hoisting javascript makes numProducts at the top, declares and initializes with value undefined
+// we know that undefined has false value, but !undefined becomes true => deleteShoppingCart() will be executed!
+if(!numProducts){
+    deleteShoppingCart();
+}
+
+var numProducts = 10;
+
+function deleteShoppingCart() {
+    console.log('all products deleted')
+}
