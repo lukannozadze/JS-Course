@@ -154,3 +154,7 @@ console.log(`sumConst' => ${sumConst(1,5)}`);
 function sumFunc(a,b){
     return a+b;
 }
+
+console.log(x);
+
+var x= 5;
