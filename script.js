@@ -139,3 +139,18 @@ console.log(varVariable); //true
 let letVariable = 'false';
 
 console.log(letVariable) //false
+
+
+//HOISTING//
+
+
+const sumConst = (a,b)=>{
+    return a+b;
+}
+
+console.log(`sumFunc' => ${sumFunc(2,3)}`);
+console.log(`sumConst' => ${sumConst(1,5)}`);
+
+function sumFunc(a,b){
+    return a+b;
+}
