@@ -187,3 +187,16 @@ const printName = () =>{
     console.log(`my name is ${myName}`)
 }
 printName();
+
+//////
+function outerFunction(outerVariable){
+  const x = 'hi';
+    return function innerFunction(){
+        console.log('Outer Variable: ' + outerVariable)
+        console.log('Inner Variable: ' + x)
+        console.log(x);
+    }
+
+}
+const newFunction = outerFunction('outside');
+newFunction();
