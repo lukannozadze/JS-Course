@@ -200,3 +200,27 @@ function outerFunction(outerVariable){
 }
 const newFunction = outerFunction('outside');
 newFunction();
+
+// tricky example in js
+
+//output will be - 0 1 2
+for(let i = 0; i < 3; i++){
+
+    setTimeout(()=>{
+        console.log(i);
+    },1000);
+ 
+}
+
+//if we change let i with var i output will become - 3 3 3
+//this is because when you use let js creates 3 different block-scope variables 0 1 2 and after for loop(syncronous code)
+//setTimeout arrow function starts execution
+// but when there is var instead of let, because it's function scoped
+// arrow function inside timeout always captures same variable which is 3 after for loop execution
+for(var i = 0; i < 3; i++){
+
+    setTimeout(()=>{
+        console.log(i);
+    },3000);
+ 
+}
