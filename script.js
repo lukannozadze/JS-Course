@@ -159,10 +159,10 @@ console.log(x);
 
 var x= 5;
 
-{
-    console.log(y);
-    let y = 4;
-}
+// {
+//     console.log(y);
+//     let y = 4;
+// }
 
 //this is nice example what will happen if we don't know hoisting concept in js
 // at first we might think deleteShoppingCart should not be executed
@@ -177,3 +177,13 @@ var numProducts = 10;
 function deleteShoppingCart() {
     console.log('all products deleted')
 }
+
+// CLOSURES
+// closure in environment which includes function and it's refferences
+// in other words, closure allows inner function to access outer data
+const myName = 'luka';
+
+const printName = () =>{
+    console.log(`my name is ${myName}`)
+}
+printName();
