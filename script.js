@@ -272,3 +272,13 @@ for(const val of Object.values(equine)){
     console.log(val);
 }
 console.timeEnd();
+
+
+const equineMap = new Map(
+    Object.entries({horse:'h',zebra:'z',unicorn:'u'})
+
+)
+
+for(const v of equine.values()){
+    console.log(v);
+}
