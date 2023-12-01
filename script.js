@@ -266,3 +266,9 @@ for(const key in equine){
     console.log(equine[key]);
 }
 console.timeEnd();
+
+console.time();
+for(const val of Object.values(equine)){
+    console.log(val);
+}
+console.timeEnd();
