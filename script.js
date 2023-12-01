@@ -139,3 +139,146 @@ console.log(varVariable); //true
 let letVariable = 'false';
 
 console.log(letVariable) //false
+
+
+//HOISTING//
+
+
+const sumConst = (a,b)=>{
+    return a+b;
+}
+
+console.log(`sumFunc' => ${sumFunc(2,3)}`);
+console.log(`sumConst' => ${sumConst(1,5)}`);
+
+function sumFunc(a,b){
+    return a+b;
+}
+
+console.log(x);
+
+var x= 5;
+
+// {
+//     console.log(y);
+//     let y = 4;
+// }
+
+//this is nice example what will happen if we don't know hoisting concept in js
+// at first we might think deleteShoppingCart should not be executed
+// but because of hoisting javascript makes numProducts at the top, declares and initializes with value undefined
+// we know that undefined has false value, but !undefined becomes true => deleteShoppingCart() will be executed!
+if(!numProducts){
+    deleteShoppingCart();
+}
+
+var numProducts = 10;
+
+function deleteShoppingCart() {
+    console.log('all products deleted')
+}
+
+// CLOSURES
+// closure in environment which includes function and it's refferences
+// in other words, closure allows inner function to access outer data
+const myName = 'luka';
+
+const printName = () =>{
+    console.log(`my name is ${myName}`)
+}
+printName();
+
+//////
+function outerFunction(outerVariable){
+  const x = 'hi';
+    return function innerFunction(){
+        console.log('Outer Variable: ' + outerVariable)
+        console.log('Inner Variable: ' + x)
+        console.log(x);
+    }
+
+}
+const newFunction = outerFunction('outside');
+newFunction();
+
+// tricky example in js
+
+//output will be - 0 1 2
+for(let i = 0; i < 3; i++){
+
+    setTimeout(()=>{
+        //console.log(i);
+    },1000);
+ 
+}
+
+//if we change let i with var i output will become - 3 3 3
+//this is because when you use let js creates 3 different block-scope variables 0 1 2 and after for loop(syncronous code)
+//setTimeout arrow function starts execution
+// but when there is var instead of let, because it's function scoped
+// arrow function inside timeout always captures same variable which is 3 after for loop execution
+for(var i = 0; i < 3; i++){
+
+    setTimeout(()=>{
+        //console.log(i);
+    },3000);
+ 
+}
+
+// LOOPS
+
+const arr = ['badger','beaver','baboon'];
+
+for(let i = 0; i < arr.length; i++){
+    console.log(arr[i]);
+}
+
+// more sugary syntax for ordinary foor loop
+for(const item of arr){
+    console.log(item);
+}
+
+arr.forEach((item)=>console.log(item));
+
+
+// loop performance
+const mil = 1e6;
+const array = Array(mil);
+
+//looping with mill is much more faster than with array.length
+console.time();
+for(let i = 0; i < mill; i++){}
+console.timeEnd();
+
+// much more slower than ordiray for loop (in my case approximately 9 times)
+console.time();
+for(const x of array){}
+console.timeEnd();
+
+console.time();
+array.map(v=>v).map(v=>v).forEach(v=>v)
+console.timeEnd();
+
+const equine = {horse:'h',zebra:'z',unicorn:'u'};
+
+console.time();
+for(const key in equine){
+    console.log(equine[key]);
+}
+console.timeEnd();
+
+console.time();
+for(const val of Object.values(equine)){
+    console.log(val);
+}
+console.timeEnd();
+
+
+const equineMap = new Map(
+    Object.entries({horse:'h',zebra:'z',unicorn:'u'})
+
+)
+
+for(const v of equine.values()){
+    console.log(v);
+}
