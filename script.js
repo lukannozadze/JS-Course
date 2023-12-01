@@ -238,3 +238,6 @@ for(const item of arr){
     console.log(item);
 }
 
+arr.forEach((item)=>console.log(item));
+
+
