@@ -254,3 +254,15 @@ console.timeEnd();
 console.time();
 for(const x of array){}
 console.timeEnd();
+
+console.time();
+array.map(v=>v).map(v=>v).forEach(v=>v)
+console.timeEnd();
+
+const equine = {horse:'h',zebra:'z',unicorn:'u'};
+
+console.time();
+for(const key in equine){
+    console.log(equine[key]);
+}
+console.timeEnd();
