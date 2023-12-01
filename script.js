@@ -241,3 +241,11 @@ for(const item of arr){
 arr.forEach((item)=>console.log(item));
 
 
+// loop performance
+const mil = 1e6;
+const array = Array(mil);
+
+//looping with mill is much more faster than with array.length
+console.time();
+for(let i = 0; i < mill; i++){}
+console.timeEnd();
