@@ -249,3 +249,8 @@ const array = Array(mil);
 console.time();
 for(let i = 0; i < mill; i++){}
 console.timeEnd();
+
+// much more slower than ordiray for loop (in my case approximately 9 times)
+console.time();
+for(const x of array){}
+console.timeEnd();
