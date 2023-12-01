@@ -207,7 +207,7 @@ newFunction();
 for(let i = 0; i < 3; i++){
 
     setTimeout(()=>{
-        console.log(i);
+        //console.log(i);
     },1000);
  
 }
@@ -220,7 +220,21 @@ for(let i = 0; i < 3; i++){
 for(var i = 0; i < 3; i++){
 
     setTimeout(()=>{
-        console.log(i);
+        //console.log(i);
     },3000);
  
 }
+
+// LOOPS
+
+const arr = ['badger','beaver','baboon'];
+
+for(let i = 0; i < arr.length; i++){
+    console.log(arr[i]);
+}
+
+// more sugary syntax for ordinary foor loop
+for(const item of arr){
+    console.log(item);
+}
+
