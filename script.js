@@ -1,3 +1,4 @@
+'use strict'
 // let num = 3;
 // let decNum = 3.14;
 
@@ -416,3 +417,128 @@ function outerFunction(base) {
    
 //    const closureExample = outerFunction();
 //    closureExample();
+
+var a = 5;
+
+function print(){
+    console.log(a);
+    var a =5;
+    console.log(a);
+}
+print();
+
+////////////////////////////
+
+// Hoisting
+// function codeHoist(){
+//     a = 10;
+//     let b = 50;
+// }
+// codeHoist();
+
+// console.log(a); // 10
+// console.log(b); // ReferenceError : b is not defined
+
+//////////
+
+function test(){
+    console.log(a);
+    if(true){
+        var a = 1.1;
+    }
+}
+test();
+
+///
+ // var code (global)
+ let name;
+ console.log(name); // undefined
+name = 'Mukul Latiyan';
+
+//////////
+
+  // Function scoped
+  function fun(){
+    // console.log(name);
+    let name = 'Mukul Latiyan'; 
+
+    return name
+}
+fun(); // Undefined
+
+///////////////////
+
+function sayHello() {
+    var say = function() { console.log(hello); }
+    // Local variable that ends up within the closure 
+    let hello = 'Hello, world!';
+    return say;
+  }
+  var sayHelloClosure = sayHello(); 
+  sayHelloClosure(); // ‘Hello, world!’
+
+
+  //output will be - 0 1 2
+for(let i = 0; i < 3; i++){
+
+    setTimeout(()=>{
+        //console.log();
+    },1000);
+ 
+}
+
+if(true){
+    function print(){
+        console.log('123');
+    }
+    print();
+}
+
+
+var x = 10;
+function foo(a) {
+  var b = 20;
+
+  function bar(c) {
+    var d = 30;
+    return boop(x + a + b + c + d);
+  }
+
+  function boop(e) {
+    return e * -1;
+  }
+
+  return bar;
+}
+
+var moar = foo(5); // Closure  
+/* 
+  The function below executes the function bar which was returned 
+  when we executed the function foo in the line above. The function bar 
+  invokes boop, at which point bar gets suspended and boop gets push 
+  onto the top of the call stack (see the screenshot below)
+*/
+console.log(moar);
+
+////////////////////////
+
+const a = 'luka';
+first();
+
+function first(){
+    const b = 'hello';
+    second();
+
+
+function second(){
+    const c = 'Hi';
+    third();
+}
+}
+
+function third(){
+    const d = 'hey';
+    console.log(d+c+b+a);
+}
+
+
