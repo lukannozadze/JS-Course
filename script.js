@@ -541,4 +541,28 @@ function third(){
     console.log(d+c+b+a);
 }
 
+////////////////////////
 
+//1. in global execution context function boardPassengers will be declared, memory will be allocated
+const boardPassengers = function(n,wait) {
+    const perGroup = n/3; //in boardPassengers execution context
+
+    setTimeout(function(){ //5.after that this code is executed also
+        console.log(`We are now boarding all ${n} passengers`);
+        console.log(`There are 3 groups, each with ${perGroup} passengers`)
+    },wait * 1000) //3.function inside setTimeout will be replaced in macrotasks queue and waits wait*1000ms to be executed
+
+    console.log(`Will start boarding in ${wait} seconds`); //4. while code inside setTimeout is waiting for its start time, this code is executed
+}
+
+boardPassengers(180,3); //2. after that boardPassengers execution context will be created up to the global execution context
+//in the call stack, informations about variable in it
+
+//interesting part is that, function boardPassenger finishes execution before code inside setTimeout is starting execution
+//but there is a question - How n and perGroup variables are accessible from inside, when outside function execution context is popped off of the call stack?
+//this if because of closure concept in js, which means that inner function always has a reference to it's birthplace function execution's context variable environmet
+//in other words, inner function always can access outer function's data, no matter if outer function's execution context is popped off.
+
+//output will be :=> 1. Will start boarding in 3 seconds
+//2. We are now boarding all 180 passengers
+//3. There are 3 groups, each with 60 passengers
