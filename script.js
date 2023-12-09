@@ -522,40 +522,40 @@ console.log(moar);
 
 ////////////////////////
 
-const a = 'luka';
-first();
+// const a = 'luka';
+// first();
 
-function first(){
-    const b = 'hello';
-    second();
+// function first(){
+//     const b = 'hello';
+//     second();
 
 
-function second(){
-    const c = 'Hi';
-    third();
-}
-}
+// function second(){
+//     const c = 'Hi';
+//     third();
+// }
+// }
 
-function third(){
-    const d = 'hey';
-    console.log(d+c+b+a);
-}
+// function third(){
+//     const d = 'hey';
+//     console.log(d+c+b+a);
+// }
 
 ////////////////////////
 
 //1. in global execution context function boardPassengers will be declared, memory will be allocated
-const boardPassengers = function(n,wait) {
-    const perGroup = n/3; //in boardPassengers execution context
+// const boardPassengers = function(n,wait) {
+//     const perGroup = n/3; //in boardPassengers execution context
 
-    setTimeout(function(){ //5.after that this code is executed also
-        console.log(`We are now boarding all ${n} passengers`);
-        console.log(`There are 3 groups, each with ${perGroup} passengers`)
-    },wait * 1000) //3.function inside setTimeout will be replaced in macrotasks queue and waits wait*1000ms to be executed
+//     setTimeout(function(){ //5.after that this code is executed also
+//         console.log(`We are now boarding all ${n} passengers`);
+//         console.log(`There are 3 groups, each with ${perGroup} passengers`)
+//     },wait * 1000) //3.function inside setTimeout will be replaced in macrotasks queue and waits wait*1000ms to be executed
 
-    console.log(`Will start boarding in ${wait} seconds`); //4. while code inside setTimeout is waiting for its start time, this code is executed
-}
+//     console.log(`Will start boarding in ${wait} seconds`); //4. while code inside setTimeout is waiting for its start time, this code is executed
+// }
 
-boardPassengers(180,3); //2. after that boardPassengers execution context will be created up to the global execution context
+// boardPassengers(180,3); //2. after that boardPassengers execution context will be created up to the global execution context
 //in the call stack, informations about variable in it
 
 //interesting part is that, function boardPassenger finishes execution before code inside setTimeout is starting execution
@@ -566,3 +566,13 @@ boardPassengers(180,3); //2. after that boardPassengers execution context will b
 //output will be :=> 1. Will start boarding in 3 seconds
 //2. We are now boarding all 180 passengers
 //3. There are 3 groups, each with 60 passengers
+
+const str = '123456789';
+
+//first method of reversing string
+for(let i =str.length-1; i>=0;i--){
+    console.log(str[i]);
+}
+
+//second method of reversing string
+console.log(str.split('').reverse().join(''));
