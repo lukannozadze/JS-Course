@@ -576,3 +576,24 @@ for(let i =str.length-1; i>=0;i--){
 
 //second method of reversing string
 console.log(str.split('').reverse().join(''));
+
+//palindrome
+
+const isPalindrome = function(arg){
+    if(typeof arg !== 'string'){
+        return false;
+    }
+    if(arg.length === 0){
+        return `Carielia`;
+    }
+    if(arg.length===1){
+        return true;
+    }
+
+for(let i =0;i<arg.length/2;i++){
+    if(arg[i]!==arg[arg.length-1-i]){
+        return false;
+    }
+    return true;
+}  
+}
