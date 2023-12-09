@@ -34,3 +34,5 @@ console.log(myArray);
 //remove
 myArray.shift();
 console.log(myArray);
+
+console.log('initial');
