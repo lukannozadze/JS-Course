@@ -147,3 +147,76 @@ console.log(hasEight); //Output: true;
 //Array.prototype.every() function will check if requested condition fits to all element of the given array and returns true or false
 isOddNums = numArr.every((element)=>element%2===1);
 console.log(isOddNums) //Output: false;
+
+///////////////////////////////////
+
+//includes
+const hasTwo = numArr.includes(2);
+console.log(hasEight);
+
+//toString
+const numString = numArr.toString();
+console.log(numString);
+
+//join
+const joinedStr = numArr.join('+');
+console.log(joinedStr);
+
+//fill
+numArr.fill('.',2,5);
+console.log(numArr); //Output: 9,1,.,.,.,5,6,7,8,9
+
+//slice
+
+const sliced = numArr.slice(2,5);
+console.log(sliced); //Output:['.','.','.']
+
+//splice
+const months =['Jan','February','March','April'];
+
+const newMonths = months.splice(1,1,'August');
+console.log(months);
+
+//sort
+const messedArr = [1,5,80,9,6];
+messedArr.sort();
+console.log(messedArr);
+
+messedArr.sort((a,b)=>a-b) //asceding
+console.log(messedArr);
+
+//from
+str = '1234';
+
+const nums = Array.from(str);
+console.log(nums);
+
+//isArray
+const isArray = Array.isArray(nums);
+console.log(isArray);
+
+//entries
+console.log([...nums.entries()]);
+
+//keys
+numsArrkeys = [...nums.keys()];
+console.log(numsArrkeys);
+
+//values
+numsArrValues = [...nums.values()];
+console.log(numsArrValues);
+console.log(nums);
+
+//reduce
+//if we do not assign 0 or something as initial value
+//default it will be 1
+const numbers =[6,6,1,2,6,21,24,2];
+const sum = numbers.reduce((prev,cur)=>prev+cur);
+console.log(sum);
+
+//flat
+const n = [1,2,3,[4,[5,[6]]]];
+
+const newA = n.flat(1);
+console.log(newA);
+
