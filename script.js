@@ -94,3 +94,14 @@ console.log('original',people);
 const sortedWithoutClone = people.toSorted();
 console.log(sortedWithoutClone);
 console.log(people);
+
+//////
+const numArr =[1,2,3,4,5,6,7,8,9];
+
+//map performs as requested and returns new array
+const modifiedArr = numArr.map((item)=>item*2);
+
+console.log(modifiedArr);
+
+//foreach does not mutate original array it performs requested action on each item
+numArr.forEach((item)=>console.log(item*2));
