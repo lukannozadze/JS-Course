@@ -79,3 +79,18 @@ console.log(peopleCopy);
 const newCopy=people.with(2,"Jeremy");
 
 console.log(newCopy);
+///////////////////////////////////////////////
+
+const sortedPeople = [...people].sort();
+
+console.log('sorted',sortedPeople);
+console.log('original',people);
+
+
+//because of sort function does not return new array we should make copy of original array and then sort it
+//this makes javascript iterate through array two times
+//to solve this there is toSorted() method which returns new array and avoids us making a copy. good for performance
+
+const sortedWithoutClone = people.toSorted();
+console.log(sortedWithoutClone);
+console.log(people);
