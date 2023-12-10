@@ -58,3 +58,24 @@ const sportsStore = [equipDept,clothesDept];
 
 //referencing an element in three dimensional array
 console.log(sportsStore[1][0][1]);
+
+/////////////////////////////
+
+const people = ['Sally','Kyle','John'];
+
+//mutate original array
+people[0] = 'Luka';
+
+//copy of people array
+const peopleCopy = [...people];
+
+//create copy and mutate so concept of immutability is protected
+peopleCopy[0] = 'Luka';
+
+console.log(peopleCopy);
+
+//the same we can do with array.prototype.with function without mutating original array
+
+const newCopy=people.with(2,"Jeremy");
+
+console.log(newCopy);
