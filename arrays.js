@@ -220,3 +220,20 @@ const n = [1,2,3,[4,[5,[6]]]];
 const newA = n.flat(1);
 console.log(newA);
 
+///////
+
+const removeDuplicates = function(nums) {
+    nums.sort((a,b)=>a-b);
+    const newNums = [];
+    let dubQuantity = 0;
+    for(let i =0;i<nums.length;i++){
+        
+        if(nums[i]!==nums[i+1]){
+            newNums.push(nums[i]);
+        }else{
+            dubQuantity++;
+        }
+    }
+    console.log(`${dubQuantity} Duplicates found! There is Array with no duplicates [${newNums}]`);
+};
+removeDuplicates([1,3,4,1,1,4,5,12,2,4,5,2,21,2,3]);
