@@ -105,3 +105,45 @@ console.log(modifiedArr);
 
 //foreach does not mutate original array it performs requested action on each item
 numArr.forEach((item)=>console.log(item*2));
+
+////////////////////////
+//filter
+const evens = numArr.filter((item)=>item%2===0)
+
+console.log(evens);
+
+//concat
+concatedArr =evens.concat(people);
+console.log(concatedArr);
+
+//find
+const special = numArr.find((element)=>element%3===0 && element%6==0);
+
+console.log(special);
+
+//findIndex
+
+const specialIndex = numArr.findIndex((element)=>element%3===0 && element%6===0);
+console.log(numArr[specialIndex]);
+
+//indexOf && lastIndexOf
+const specIndex = numArr.indexOf(special);
+console.log(specIndex);
+console.log(numArr.indexOf(999));
+
+numArr.unshift(9);
+console.log(numArr);
+
+//difference between indexOf and lastIndexOf is that indexof always refers first required element index but lastIndexOf refers last required index of element
+console.log('IndexOf Method: ', numArr.indexOf(9));
+console.log('LastIndexOf Method: ', numArr.lastIndexOf(9));
+
+//some
+//Array.prototype.some() function will check if requested condition fits to any element from given array and returns true or false
+const hasEight = numArr.some((element)=>element%8===0);
+console.log(hasEight); //Output: true;
+
+//every
+//Array.prototype.every() function will check if requested condition fits to all element of the given array and returns true or false
+isOddNums = numArr.every((element)=>element%2===1);
+console.log(isOddNums) //Output: false;
