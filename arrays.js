@@ -243,7 +243,6 @@ removeDuplicates([1, 3, 4, 1, 1, 4, 5, 12, 2, 4, 5, 2, 21, 2, 3]);
 /////////
 const findMedianSortedArrays = function (nums1, nums2) {
   const mergedArr = [...nums1, ...nums2].sort((a, b) => a - b);
-  console.log(mergedArr);
   const mergedArrLength = mergedArr.length;
   if (mergedArrLength === 1) {
     return mergedArr[0];
@@ -260,3 +259,5 @@ const findMedianSortedArrays = function (nums1, nums2) {
 };
 
 console.log(findMedianSortedArrays([], [1]));
+
+///////////////////////
