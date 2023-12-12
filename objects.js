@@ -60,3 +60,12 @@ console.log(Object.values(band));
 for (const job in band) {
   console.log(`On ${job}, It's ${band[job]}`);
 }
+
+//destructuring
+const { guitar: myvariable, bass, myBass } = band;
+console.log(myvariable);
+console.log(myBass);
+function sings({ vocals }) {
+  return `${vocals} sings!`;
+}
+console.log(sings(band));
