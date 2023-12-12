@@ -263,19 +263,21 @@ console.log(findMedianSortedArrays([], [1]));
 ///////////////////////
 //difference between deep copy and shallow copy on arrays
 //shallow copy example
-const testArr = [1, 2, 3, [5, 6]];
+const testArr = [1, 2, 3, { name: "luka" }];
 const shallow = [...testArr];
 
-shallow[0] = 9;
+{
+  name: "luka";
+}
 console.log("Original:", [testArr]);
 console.log("Shallow:", shallow);
 
 //deep copy example
-const originalArray = [1, 2, [3, 4]];
+const originalArray = [1, 2, { name: "luka" }];
 const deepCopyArray = JSON.parse(JSON.stringify(originalArray));
 
 // Modify the copied data
-deepCopyArray[2][0] = 99;
+deepCopyArray[2].name = "john";
 
 console.log(originalArray); // [1, 2, [3, 4]]
 console.log(deepCopyArray); // [1, 2, [99, 4]]
