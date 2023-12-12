@@ -44,3 +44,19 @@ tesla.engine = function () {
   return "Shhh...";
 };
 console.log(tesla.engine());
+
+const band = {
+  vocals: "Robert Plant",
+  guitar: "Jimmy Page",
+  bass: "John Paul Jones",
+  drums: "John Bonham",
+};
+delete band.drums;
+console.log(band);
+
+console.log(Object.keys(band));
+console.log(Object.values(band));
+
+for (const job in band) {
+  console.log(`On ${job}, It's ${band[job]}`);
+}
