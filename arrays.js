@@ -261,3 +261,24 @@ const findMedianSortedArrays = function (nums1, nums2) {
 console.log(findMedianSortedArrays([], [1]));
 
 ///////////////////////
+//difference between deep copy and shallow copy on arrays
+//shallow copy example
+const testArr = [1, 2, 3, [5, 6]];
+const shallow = [...testArr];
+
+shallow[0] = 9;
+console.log("Original:", [testArr]);
+console.log("Shallow:", shallow);
+
+//deep copy example
+const originalArray = [1, 2, [3, 4]];
+const deepCopyArray = JSON.parse(JSON.stringify(originalArray));
+
+// Modify the copied data
+deepCopyArray[2][0] = 99;
+
+console.log(originalArray); // [1, 2, [3, 4]]
+console.log(deepCopyArray); // [1, 2, [99, 4]]
+
+//to sum up in shallow copy nested arrays is not duplicated and has reference to original array's nested array
+//but in deep copy everything consider nested array's are duplicated
