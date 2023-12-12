@@ -284,3 +284,11 @@ console.log(deepCopyArray); // [1, 2, [99, 4]]
 
 //to sum up in shallow copy nested arrays is not duplicated and has reference to original array's nested array
 //but in deep copy everything consider nested array's are duplicated
+
+testArr.forEach((item, index, array) => {
+  console.log(array);
+});
+
+//creating array via constructor
+const a = new Array([1, 2]);
+console.log(a);
