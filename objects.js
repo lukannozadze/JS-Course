@@ -62,10 +62,21 @@ for (const job in band) {
 }
 
 //destructuring
-const { guitar: myvariable, bass, myBass } = band;
+const { guitar: myvariable, bass: myBass } = band;
 console.log(myvariable);
 console.log(myBass);
 function sings({ vocals }) {
   return `${vocals} sings!`;
 }
 console.log(sings(band));
+
+/// when we use arrow function, this keyword there always refers global window object, not local object
+var myNum = 0;
+const obj = {
+  myNum: 5,
+  increaseNum: () => {
+    this.myNum++;
+  },
+};
+obj.increaseNum();
+console.log(myNum); //output: 1
