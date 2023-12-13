@@ -125,3 +125,12 @@ function Circle(radius) {
   };
 }
 const circle2 = new Circle(10); //without new keyword 'this' inside constructor function refers to global window object
+
+//Function is object
+//creating a function Rectangle from Function constructor and then create rectangle1 object from newly created Rectangle Function constructor
+const Rectangle = new Function(
+  ["height", "width"],
+  `this.height=height; this.width=width`
+);
+const rectangle1 = new Rectangle(1, 2);
+console.log(rectangle1);
