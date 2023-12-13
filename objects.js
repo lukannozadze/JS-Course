@@ -103,3 +103,25 @@ const y = Object.assign({}, x);
 x.a = 9;
 x.obj = { o: "hello" };
 console.log(y);
+
+//Factory Function
+const circle = function (radius) {
+  return {
+    radius,
+    draw: function () {
+      console.log(`draw a circle with radius of ${radius}`);
+    },
+  };
+};
+
+const circle1 = circle(5);
+circle1.draw();
+
+//Constructor Function
+function Circle(radius) {
+  this.radius = radius;
+  this.draw = function () {
+    console.log(`draw a circle with radius of ${radius}`);
+  };
+}
+const circle2 = new Circle(10); //without new keyword 'this' inside constructor function refers to global window object
