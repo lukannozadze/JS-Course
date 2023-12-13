@@ -130,7 +130,11 @@ const circle2 = new Circle(10); //without new keyword 'this' inside constructor 
 //creating a function Rectangle from Function constructor and then create rectangle1 object from newly created Rectangle Function constructor
 const Rectangle = new Function(
   ["height", "width"],
-  `this.height=height; this.width=width`
+  `this.height=height; this.width=width; return this;`
 );
 const rectangle1 = new Rectangle(1, 2);
 console.log(rectangle1);
+
+//we can also not use new keyword and instead of use  call or apply method to call constructor function and create object
+const rectangle2 = Rectangle.apply({}, [3, 5]);
+console.log(rectangle2);
