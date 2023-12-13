@@ -80,3 +80,26 @@ const obj = {
 };
 obj.increaseNum();
 console.log(myNum); //output: 1
+
+///
+const a = {
+  x: 5,
+};
+
+const b = a; // a and b references same object in heap memory
+
+b.x = 3;
+console.log(a.x); //output: 3
+
+// with Object.assign clone is created which refers other object in heap memory so if you change first object it does not affect to the second
+const x = {
+  a: 1,
+  obj: {
+    o: "hi",
+  },
+};
+
+const y = Object.assign({}, x);
+x.a = 9;
+x.obj = { o: "hello" };
+console.log(y);
