@@ -142,12 +142,15 @@ console.log(rectangle2);
 function Circ(radius) {
   this.radius = radius;
   let defaultLocation = { x: 0, y: 0 };
-  let computeOptimumLocation = function (factor) {};
   this.draw = function () {
-    computeOptimumLocation(0.1);
-
     console.log("draw");
   };
+  Object.defineProperty(this, "defaultLocation", {
+    get: function () {
+      return defaultLocation;
+    },
+  });
 }
 const circ1 = new Circ(10);
 circ1.draw();
+console.log(circ1.defaultLocation);
