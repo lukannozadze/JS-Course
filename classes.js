@@ -99,3 +99,28 @@ function developSoftware(programmers) {
   }
 }
 developSoftware(programmers);
+
+//////
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  makeSound() {
+    console.log("Generic Animal Sound!!!");
+  }
+}
+
+class Dog extends Animal {
+  constructor(name) {
+    super(name);
+  }
+  makeSound() {
+    //this child method overrides parent makeSound methods and that is polymorphism
+    super.makeSound();
+    console.log("Woof! Woof!");
+  }
+}
+const a1 = new Animal("Dom");
+const a2 = new Dog("Jeff");
+a2.makeSound();
+a1.makeSound();
