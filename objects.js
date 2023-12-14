@@ -161,3 +161,29 @@ const circ1 = new Circ(10);
 circ1.draw();
 console.log(circ1.defaultLocation);
 circ1.defaultLocation = { x: 2, y: 4 };
+
+///////////////task
+const StopWatch = function () {
+  this.duration = 0;
+  this.timer;
+  this.isOn = false;
+  this.start = function () {
+    if (this.isOn) {
+      throw new Error("StopWatch has already started");
+    }
+    this.isOn = !this.isOn;
+    this.timer = setInterval(() => {
+      this.duration = this.duration + 1;
+    });
+  };
+  this.stop = function () {
+    if (!this.isOn) {
+      throw new Error("StopWatch has already stopped");
+    }
+    this.isOn = !this.isOn;
+    clearInterval(this.timer);
+  };
+  this.reset = function () {
+    this.duration = 0;
+  };
+};
