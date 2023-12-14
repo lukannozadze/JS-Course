@@ -149,8 +149,15 @@ function Circ(radius) {
     get: function () {
       return defaultLocation;
     },
+    set: function (value) {
+      if (!value.x || !value.y) {
+        throw new Error("Invalid location!");
+      }
+      defaultLocation = value;
+    },
   });
 }
 const circ1 = new Circ(10);
 circ1.draw();
 console.log(circ1.defaultLocation);
+circ1.defaultLocation = { x: 2, y: 4 };
