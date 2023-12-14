@@ -138,3 +138,16 @@ console.log(rectangle1);
 //we can also not use new keyword and instead of use  call or apply method to call constructor function and create object
 const rectangle2 = Rectangle.apply({}, [3, 5]);
 console.log(rectangle2);
+
+function Circ(radius) {
+  this.radius = radius;
+  let defaultLocation = { x: 0, y: 0 };
+  let computeOptimumLocation = function (factor) {};
+  this.draw = function () {
+    computeOptimumLocation(0.1);
+
+    console.log("draw");
+  };
+}
+const circ1 = new Circ(10);
+circ1.draw();
