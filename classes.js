@@ -124,3 +124,35 @@ const a1 = new Animal("Dom");
 const a2 = new Dog("Jeff");
 a2.makeSound();
 a1.makeSound();
+////
+const myList = document.getElementById("myList");
+
+class ListBinding {
+  constructor(element) {
+    this.listElement = element;
+    this.textList = ["test"];
+  }
+  static createListItem(text) {
+    const li = document.createElement("li");
+    li.textContent = text;
+    return li;
+  }
+  update() {
+    while (this.listElement.firstChild) {
+      this.listElement.removeChild(this.listElement.firstChild);
+    }
+    for (const text of this.textList) {
+      this.listElement.appendChild(ListBinding.createListItem(text));
+    }
+  }
+  add(text) {
+    this.textList.push(text);
+    this.update();
+  }
+  remove(index) {
+    this.textList.splice(index, 1);
+    this.update();
+  }
+}
+const listBinding = new ListBinding(myList);
+listBinding.update();
