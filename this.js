@@ -32,3 +32,17 @@ person = {
   name: "luka",
 };
 person.print(); //this refers to object from where method is called
+
+function talk(lang) {
+  if (lang === "en") {
+    console.log(`I am ${this.name}`);
+  } else {
+    console.log(`me var ${this.name}`);
+  }
+}
+
+me = {
+  name: "luka",
+};
+
+talk.call(me, "en");
