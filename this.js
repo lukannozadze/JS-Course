@@ -48,3 +48,11 @@ me = {
 };
 
 talk.apply(me, ["en", true]);
+
+function Person(name) {
+  this.name = name;
+  setTimeout(function () {
+    console.log(this);
+  }, 100);
+}
+let p = new Person("me");
