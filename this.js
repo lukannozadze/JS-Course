@@ -1,14 +1,16 @@
 const video = {
   title: "a",
-  play: function () {
-    console.log("play");
+  tags: ["a", "b", "c"],
+  showTags() {
+    this.tags.forEach(
+      function (tag) {
+        console.log(this.title, tag);
+      }.bind(this)
+    );
   },
 };
-video.stop = function () {
-  console.log(this);
-};
-video.stop();
 
+video.showTags();
 //function declaration always saves in window object, so this keyword inside that function always refers to window object
 function Animal(name) {
   this.name = name;
