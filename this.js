@@ -18,3 +18,17 @@ function Animal(name) {
 }
 
 const doggo = new Animal("Jack"); //new keyword makes new empty object and forces this keyword to refer this newly crated object and not window
+
+///
+
+obj = {
+  print() {
+    console.log(this);
+  },
+};
+
+person = {
+  ...obj,
+  name: "luka",
+};
+person.print(); //this refers to object from where method is called
