@@ -52,7 +52,14 @@ talk.apply(me, ["en", true]);
 function Person(name) {
   this.name = name;
   setTimeout(function () {
+    //function declaration refers window object, arrow function refers current object
     console.log(this);
   }, 100);
 }
 let p = new Person("me");
+
+const button = document.querySelector(".btn");
+button.addEventListener("click", () => {
+  //in eventListener arrow function refers window object and function declaration refers current obj
+  console.log(this);
+});
