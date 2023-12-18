@@ -1,5 +1,5 @@
 print();
-x();
+// x();
 //Difference between function declaration and function expression is hoisting function declaration always hoisted and function expression hoisted as
 //variable, so we can invoke variable as a function
 //Function Statement aka Function Declaration
@@ -8,7 +8,7 @@ function print() {
 }
 
 //Function Expression
-var x = function print() {
+const x = function print() {
   console.log("Hello World!");
 };
 
@@ -18,3 +18,11 @@ var x = function print() {
 setTimeout(() => {
   console.log("I am anonymous function");
 }, 100);
+
+//Name function expression
+//Same as function expression but on the right side we have named function not anonymous one
+const y = function xyx() {
+  console.log("Hi");
+};
+
+y();
