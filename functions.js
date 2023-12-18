@@ -11,3 +11,10 @@ function print() {
 var x = function print() {
   console.log("Hello World!");
 };
+
+//Anonymous function
+//anonymous function does not have  name and behaves like value
+//main usecase of anonymous function is when it passes as argument to another function
+setTimeout(() => {
+  console.log("I am anonymous function");
+}, 100);
