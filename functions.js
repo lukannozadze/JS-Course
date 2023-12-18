@@ -26,3 +26,13 @@ const y = function xyx() {
 };
 
 y();
+
+//arrow function
+const test = () => {
+  console.log("I am arrow function");
+};
+
+//immediately invoked function => IIF
+(() => {
+  console.log("I will never run again");
+})();
