@@ -49,3 +49,21 @@ const resultSubtract = operate(subtraction, 8, 3);
 
 console.log(resultAdd); // Output: 11
 console.log(resultSubtract); // Output: 5
+
+//function callbacks
+//callback is a function which is passed as a parameter to the function
+// because we can pass functions as parameters and also return them, we can say that in javascript we have first class functions
+function fetchData(callback) {
+  // Simulating an asynchronous operation
+  setTimeout(() => {
+    const data = "Data from the server"; //after delay of 1000ms data will be fetched pass as callback function parameter
+    callback(data); //callback is invoked
+  }, 1000);
+}
+
+//function is declared and implemented which is used as callback
+function processResult(result) {
+  console.log("Processing:", result); //Output
+}
+
+fetchData(processResult);
