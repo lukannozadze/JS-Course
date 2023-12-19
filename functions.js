@@ -67,3 +67,12 @@ function processResult(result) {
 }
 
 fetchData(processResult);
+
+//function with default parameter
+function greetUser(name = "Guest") {
+  //default: name = 'Guest'
+  console.log(`Hello, ${name}!`);
+}
+
+greetUser(); // Output: Hello, Guest!
+greetUser("John"); // Output: Hello, John! //we have argument while invoking function, this argument will overwrite default parameter
