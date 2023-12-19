@@ -36,3 +36,16 @@ const test = () => {
 (() => {
   console.log("I will never run again");
 })();
+
+function operate(operation, a, b) {
+  return operation(a, b);
+}
+
+const addition = (x, y) => x + y;
+const subtraction = (x, y) => x - y;
+
+const resultAdd = operate(addition, 8, 3);
+const resultSubtract = operate(subtraction, 8, 3);
+
+console.log(resultAdd); // Output: 11
+console.log(resultSubtract); // Output: 5
