@@ -58,8 +58,18 @@ function Person(name) {
 }
 let p = new Person("me");
 
-const button = document.querySelector(".btn");
-button.addEventListener("click", () => {
-  //in eventListener arrow function refers window object and function declaration refers current obj
-  console.log(this);
-});
+// const button = document.querySelector(".btn");
+// button.addEventListener("click", () => {
+//   //in eventListener arrow function refers window object and function declaration refers current obj
+//   console.log(this);
+// });
+
+function SuperElement(type, content) {
+  this.el = document.createElement(type);
+  this.el.textContent = content;
+  document.body.append(this.el);
+  this.el.addEventListener("click", () => {
+    console.log(this);
+  });
+}
+const h1 = new SuperElement("h1", "I am header");
