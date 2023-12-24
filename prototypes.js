@@ -18,7 +18,7 @@ const human = {
 const luka = Object.create(human);
 luka.age = 21;
 console.log(luka);
-console.log(luka.prototype);
+
 console.log(luka.kind); //firstly js searches kind property in object from it's called, when property is not found, js will search in it's prototype
 //(in our case human is luka's prototype)
 class Human {
@@ -36,3 +36,9 @@ const h1 = new Human();
 const s1 = new SuperHuman("flying");
 console.log(SuperHuman.prototype);
 console.log(SuperHuman.__proto__);
+
+///////
+const parent = { name: "parent" };
+const child = {};
+Object.setPrototypeOf(child, parent);
+console.log(child.__proto__);
