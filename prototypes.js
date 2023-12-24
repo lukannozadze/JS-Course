@@ -18,6 +18,21 @@ const human = {
 const luka = Object.create(human);
 luka.age = 21;
 console.log(luka);
-
+console.log(luka.prototype);
 console.log(luka.kind); //firstly js searches kind property in object from it's called, when property is not found, js will search in it's prototype
 //(in our case human is luka's prototype)
+class Human {
+  constructor() {
+    this.kind = "human";
+  }
+}
+class SuperHuman extends Human {
+  constructor(kind, ability) {
+    super(kind);
+    this.ability = ability;
+  }
+}
+const h1 = new Human();
+const s1 = new SuperHuman("flying");
+console.log(SuperHuman.prototype);
+console.log(SuperHuman.__proto__);
