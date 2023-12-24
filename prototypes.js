@@ -42,3 +42,10 @@ const parent = { name: "parent" };
 const child = {};
 Object.setPrototypeOf(child, parent);
 console.log(child.__proto__);
+
+const Car = function () {};
+const Tesla = new Car();
+console.log(Car.prototype);
+console.log(Tesla.__proto__);
+
+console.log(Car.prototype === Tesla.__proto__);
