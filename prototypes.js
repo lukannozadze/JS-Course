@@ -49,3 +49,14 @@ console.log(Car.prototype);
 console.log(Tesla.__proto__);
 
 console.log(Car.prototype === Tesla.__proto__);
+
+//////
+const catProto = {
+  sound: "meow",
+  makeSound() {
+    console.log(this.sound);
+  },
+};
+
+const cat = Object.create(catProto);
+cat.makeSound();
