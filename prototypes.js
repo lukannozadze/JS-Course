@@ -61,11 +61,30 @@ const catProto = {
 const cat = Object.create(catProto);
 cat.makeSound();
 
-function Rabit(type) {
-  this.type = type;
+// function Rabit(type) {
+//   this.type = type;
+// }
+// Rabit.prototype.speak = function (line) {
+//   console.log(`The ${this.type} rabbit says ${line}`);
+// };
+// const killerRabbit = new Rabit("killer");
+// console.log(killerRabbit.__proto__ === Rabit.prototype);
+
+class Rabit {
+  color = "white";
+  constructor(type) {
+    this.type = type;
+  }
+  speak(line) {
+    console.log(`The ${this.type} rabbit says ${line}`);
+  }
 }
-Rabit.prototype.speak = function (line) {
-  console.log(`The ${this.type} rabbit says ${line}`);
-};
+class whiteRabit extends Rabit {
+  constructor(type) {
+    super(type);
+  }
+}
 const killerRabbit = new Rabit("killer");
-console.log(killerRabbit.__proto__ === Rabit.prototype);
+const whiteKillerRabit = new whiteRabit("killer");
+console.log(killerRabbit);
+console.log(whiteKillerRabit.color);
