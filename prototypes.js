@@ -60,3 +60,12 @@ const catProto = {
 
 const cat = Object.create(catProto);
 cat.makeSound();
+
+function Rabit(type) {
+  this.type = type;
+}
+Rabit.prototype.speak = function (line) {
+  console.log(`The ${this.type} rabbit says ${line}`);
+};
+const killerRabbit = new Rabit("killer");
+console.log(killerRabbit.__proto__ === Rabit.prototype);
