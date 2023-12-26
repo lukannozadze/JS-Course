@@ -23,3 +23,12 @@ setTimeout(() => console.log('K Timeout'), 0);
 queueMicrotask(() => console.log('L Queue Microtask'));
 
 console.log('M Stack');
+
+
+
+///
+console.log('start');
+
+fetch('https://jsonplaceholder.typicode.com/todos/1').then(response=>response.json()).then(data=>console.log(data));
+
+setTimeout(()=>console.log('setTimeout'),0);
