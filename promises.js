@@ -41,16 +41,19 @@ console.log(`sync2 - ${performance.now() - startTime}`);
 
 /////
 const getFruit = async () => {
-  const fruits = {
-    pineapple: "🍍",
-    peach: "🍑",
-    strawberry: "🍓",
-  };
-  return fruits;
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        pineapple: "🍍",
+        peach: "🍑",
+        strawberry: "🍓",
+      });
+    }, 1000);
+  });
 };
 
 const makeSmoothie = async () => {
-  const response = await getFruit();
-  console.log(response);
+  const fruits = await getFruit();
 };
-makeSmoothie();
+
+console.log(makeSmoothie());
