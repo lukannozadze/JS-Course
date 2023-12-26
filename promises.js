@@ -40,20 +40,27 @@ console.log("synchronous 2");
 console.log(`sync2 - ${performance.now() - startTime}`);
 
 /////
-const getFruit = async () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        pineapple: "🍍",
-        peach: "🍑",
-        strawberry: "🍓",
-      });
-    }, 1000);
-  });
-};
+// const getFruit = async () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve({
+//         pineapple: "🍍",
+//         peach: "🍑",
+//         strawberry: "🍓",
+//       });
+//     }, 1000);
+//   });
+// };
 
-const makeSmoothie = async () => {
-  const fruits = await getFruit();
-};
+// const makeSmoothie = async () => {
+//   const fruits = await getFruit();
+// };
 
-console.log(makeSmoothie());
+// console.log(makeSmoothie());
+////
+const getData = async () => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  const data = await response.json();
+  console.log(data);
+};
+getData();
