@@ -38,3 +38,19 @@ Promise.resolve().then(() => {
 
 console.log("synchronous 2");
 console.log(`sync2 - ${performance.now() - startTime}`);
+
+/////
+const getFruit = async () => {
+  const fruits = {
+    pineapple: "🍍",
+    peach: "🍑",
+    strawberry: "🍓",
+  };
+  return fruits;
+};
+
+const makeSmoothie = async () => {
+  const response = await getFruit();
+  console.log(response);
+};
+makeSmoothie();
