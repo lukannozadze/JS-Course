@@ -64,3 +64,20 @@ const getData = async () => {
   console.log(data);
 };
 getData();
+
+////////////
+
+const cart = ['shoes','pants','kurta','kurkuma'];
+
+//old way of doing asynchrnous operations is using callbacks
+createOrder(cart,function(){
+    proceedToPayment(orderId);
+})
+
+//new way of doing asynchronous operations is using promises
+const promise = createOrder(cart);
+
+
+promise.then(function(orderId){
+    proceedToPayment(orderId);
+}) 
