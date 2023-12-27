@@ -59,23 +59,40 @@
 // }
 // getData();
 
-let obj = {
-  id: 1,
-  name: "Steve",
-  favoriteColor: "blue",
-};
+// let obj = {
+//   id: 1,
+//   name: "Steve",
+//   favoriteColor: "blue",
+// };
 
-let jsonToString = JSON.stringify(obj);
-let file = new File([jsonToString], "test.json", { type: "application/json" });
-console.log(file);
+// let jsonToString = JSON.stringify(obj);
+// let file = new File([jsonToString], "test.json", { type: "application/json" });
+// console.log(file);
 
-let response = new Response(file, {
-  status: 200,
-  statusText: "OK",
-  headers: {
-    "Content-Type": "application/json",
-    "Content-Length": file.size,
-    "x-steve": "hello",
-  },
-});
-console.log(response.json().then((data) => console.log(data)));
+// let response = new Response(file, {
+//   status: 200,
+//   statusText: "OK",
+//   headers: {
+//     "Content-Type": "application/json",
+//     "Content-Length": file.size,
+//     "x-steve": "hello",
+//   },
+// });
+// console.log(response.json().then((data) => console.log(data)));
+
+const imgStr =
+  "https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg";
+
+fetch(imgStr)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Invalid response status");
+    }
+    return response.blob();
+  })
+  .then((blob) => {
+    const url = URL.createObjectURL(blob);
+    const img = document.getElementsByTagName("img")[0];
+    img.src = url;
+  })
+  .catch((err) => console.warn(err));
