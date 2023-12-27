@@ -36,25 +36,46 @@
 // }
 // getData();
 
-const str = 'https://jsonplaceholder.typicode.com/users';
-function getData(){
-    const url = new URL(str);
-    const request = new Request(url,{
-        headers:{'x-steve':'hello'},
-        method:'GET',
-        cache:'no-store'
-    });
-    console.log(url,url.hostname);
-    fetch(request).then(response=>{
-       if(!response.ok){
-        throw new Error("Invalid response status");
-       }
-       return response.json();
-    }).then(data=>{
-        console.log(data);
-    })
-     .catch(err=>{
-         console.warn(err.message);
-     });
-} 
-getData();
+// const str = 'https://jsonplaceholder.typicode.com/users';
+// function getData(){
+//     const url = new URL(str);
+//     const request = new Request(url,{
+//         headers:{'x-steve':'hello'},
+//         method:'GET',
+//         cache:'no-store'
+//     });
+//     console.log(url,url.hostname);
+//     fetch(request).then(response=>{
+//        if(!response.ok){
+//         throw new Error("Invalid response status");
+//        }
+//        return response.json();
+//     }).then(data=>{
+//         console.log(data);
+//     })
+//      .catch(err=>{
+//          console.warn(err.message);
+//      });
+// }
+// getData();
+
+let obj = {
+  id: 1,
+  name: "Steve",
+  favoriteColor: "blue",
+};
+
+let jsonToString = JSON.stringify(obj);
+let file = new File([jsonToString], "test.json", { type: "application/json" });
+console.log(file);
+
+let response = new Response(file, {
+  status: 200,
+  statusText: "OK",
+  headers: {
+    "Content-Type": "application/json",
+    "Content-Length": file.size,
+    "x-steve": "hello",
+  },
+});
+console.log(response.json().then((data) => console.log(data)));
