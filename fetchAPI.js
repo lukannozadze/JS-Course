@@ -97,36 +97,67 @@
 //   })
 //   .catch((err) => console.warn(err));
 
+// const getData = () => {
+//   let str = "http://127.0.0.1:5500/";
+//   let url = new URL(str);
+//   let sp = url.searchParams;
+//   sp.append("hello", "world");
+//   sp.append("api-key", "kakaskdkaksdjkqweqwe");
+//   // console.log(url.searchParams.get("hello"));
+//   console.log(url);
+//   let h = new Headers();
+//   h.append("Content-type", "application/json");
+//   h.append("x-api-key", "kakaskdkaksdjkqweqwe");
+//   let request = new Request(url, {
+//     method: "POST",
+//     headers: h,
+//     cache: "default",
+//     credentials: "omit",
+//   });
+//   fetch(request)
+//     .then((response) => {
+//       console.log(response);
+//       if (!response.ok) {
+//         throw new Error("Invalid response status");
+//       }
+//       return response.text();
+//     })
+//     .then((data) => {
+//       console.log(data);
+//     })
+//     .catch((err) => {
+//       console.warn(err.message);
+//     });
+// };
+// getData();
+imgInput = document.getElementById("imgInput");
+sendBtn = document.querySelector(".send");
+// const obj = {
+//   id: 1,
+//   name: "Steve",
+//   favoriteColor: "blue",
+// };
+
 const getData = () => {
   let str = "http://127.0.0.1:5500/";
   let url = new URL(str);
-  let sp = url.searchParams;
-  sp.append("hello", "world");
-  sp.append("api-key", "kakaskdkaksdjkqweqwe");
-  // console.log(url.searchParams.get("hello"));
-  console.log(url);
-  let h = new Headers();
-  h.append("Content-type", "application/json");
-  h.append("x-api-key", "kakaskdkaksdjkqweqwe");
+  let fd = new FormData();
+  fd.append("file", imgInput.files[0], imgInput.files[0].name);
   let request = new Request(url, {
     method: "POST",
-    headers: h,
-    cache: "default",
-    credentials: "omit",
+    headers: {
+      "content-type": "multipart/form-data",
+    },
+    body: fd,
   });
   fetch(request)
     .then((response) => {
-      console.log(response);
       if (!response.ok) {
         throw new Error("Invalid response status");
       }
       return response.text();
     })
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((err) => {
-      console.warn(err.message);
-    });
+    .then((data) => {})
+    .catch((err) => console.warn(err.message));
 };
-getData();
+sendBtn.addEventListener("click", getData);
