@@ -80,19 +80,53 @@
 // });
 // console.log(response.json().then((data) => console.log(data)));
 
-const imgStr =
-  "https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg";
+// const imgStr =
+//   "https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg";
 
-fetch(imgStr)
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error("Invalid response status");
-    }
-    return response.blob();
-  })
-  .then((blob) => {
-    const url = URL.createObjectURL(blob);
-    const img = document.getElementsByTagName("img")[0];
-    img.src = url;
-  })
-  .catch((err) => console.warn(err));
+// fetch(imgStr)
+//   .then((response) => {
+//     if (!response.ok) {
+//       throw new Error("Invalid response status");
+//     }
+//     return response.blob();
+//   })
+//   .then((blob) => {
+//     const url = URL.createObjectURL(blob);
+//     const img = document.getElementsByTagName("img")[0];
+//     img.src = url;
+//   })
+//   .catch((err) => console.warn(err));
+
+const getData = () => {
+  let str = "http://127.0.0.1:5500/";
+  let url = new URL(str);
+  let sp = url.searchParams;
+  sp.append("hello", "world");
+  sp.append("api-key", "kakaskdkaksdjkqweqwe");
+  // console.log(url.searchParams.get("hello"));
+  console.log(url);
+  let h = new Headers();
+  h.append("Content-type", "application/json");
+  h.append("x-api-key", "kakaskdkaksdjkqweqwe");
+  let request = new Request(url, {
+    method: "POST",
+    headers: h,
+    cache: "default",
+    credentials: "omit",
+  });
+  fetch(request)
+    .then((response) => {
+      console.log(response);
+      if (!response.ok) {
+        throw new Error("Invalid response status");
+      }
+      return response.text();
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((err) => {
+      console.warn(err.message);
+    });
+};
+getData();
