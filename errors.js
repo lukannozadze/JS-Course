@@ -7,3 +7,13 @@ try {
 } finally {
   console.log("This always runs on success or failure");
 }
+
+let json = '{"age": 30}';
+try {
+  let user = JSON.parse(json);
+  if (!user.name) {
+    throw new SyntaxError("Incomplete data: no name");
+  }
+} catch (e) {
+  console.error(`JSON Error: ${e.message}`);
+}
