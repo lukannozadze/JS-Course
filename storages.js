@@ -13,3 +13,9 @@ const person = {
 localStorage.setItem('person',JSON.stringify(person));
 console.log(JSON.parse(localStorage.getItem('person')))
 localStorage.removeItem('name');
+
+
+//////////////////
+
+sessionStorage.setItem('name','Luka');
+console.log(sessionStorage.getItem('name'));
