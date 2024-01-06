@@ -29,5 +29,6 @@ document.cookie = 'lastName=Smith; expires=' + new Date(2025, 0, 1).toUTCString(
 
 document.cookie = 'other='+JSON.stringify(person) + ';' + 'expires' + new Date(2026,0,5).toUTCString();
 
+document.cookie = 'other=; expires='+new Date(1980,0,1).toUTCString();
 
 console.log(document.cookie)
