@@ -1,69 +1,99 @@
-function* generateId(){
-    let id = 1;
+// function* generateId(){
+//     let id = 1;
 
-    while(true){
-       console.log(2);
-       const increment = yield id
-       console.log(increment);
-       if(increment!=null){
-        console.log('babiddy');
-        id+=increment
-       }else{
-        console.log('gigiddy')
-        id++;
-       }
+//     while(true){
+//        console.log(2);
+//        const increment = yield id
+//        console.log(increment);
+//        if(increment!=null){
+//         console.log('babiddy');
+//         id+=increment
+//        }else{
+//         console.log('gigiddy')
+//         id++;
+//        }
+//     }
+// }
+
+// const generateObj = generateId();
+
+// console.log(generateObj.next());
+//  console.log(generateObj.next(5));
+//  console.log(generateObj.next());
+
+// function* test(){
+//     let id = 1; //5
+//     while(true){
+//         id = yield id;
+//     }
+// }
+
+// // const t1 = test();
+// // console.log(t1.next());
+// // console.log(t1.next(7));
+// // console.log(t1.next(10));
+
+
+// function* generateSequence(start, end) {
+//     for (let i = start; i <= end; i++) yield i;
+//   }
+  
+//   const seq = generateSequence(1,5)
+
+
+//   function* generatePasswordCodes() {
+  
+//     // 0..9
+//     yield* generateSequence(48, 57);
+  
+//     // A..Z
+//     yield* generateSequence(65, 90);
+  
+//     // a..z
+//     yield* generateSequence(97, 122);
+  
+//   }
+
+
+// const pass = generatePasswordCodes();
+// console.log(pass.next());
+  
+//    let str = '';
+  
+//   for(let code of generatePasswordCodes()) {
+//     console.log(code)
+//     str += String.fromCharCode(code);
+//    }
+//    console.log(str);
+  
+// //   alert(str); // 0..9A..Za..z
+
+
+// function* gen() {
+//     // Pass a question to the outer code and wait for an answer
+//      const result = yield "2 + 2 = ?"; // (*)
+//      console.log(result)
+//   }
+  
+//   let generator = gen();
+  
+//   console.log(generator.next())
+//   console.log(generator.next(4))
+  
+ 
+  function* gen() {
+    try {
+      let result = yield "2 + 2 = ?"; // (1)
+      alert("The execution does not reach here, because the exception is thrown above");
+    } catch(e) {
+      alert(e); // shows the error
     }
-}
-
-const generateObj = generateId();
-
-console.log(generateObj.next());
- console.log(generateObj.next(5));
- console.log(generateObj.next());
-
-function* test(){
-    let id = 1; //5
-    while(true){
-        id = yield id;
-    }
-}
-
-// const t1 = test();
-// console.log(t1.next());
-// console.log(t1.next(7));
-// console.log(t1.next(10));
-
-
-function* generateSequence(start, end) {
-    for (let i = start; i <= end; i++) yield i;
   }
   
-  const seq = generateSequence(1,5)
-
-
-  function* generatePasswordCodes() {
+  let generator = gen();
+ 
+  let question = generator.next().value;
   
-    // 0..9
-    yield* generateSequence(48, 57);
-  
-    // A..Z
-    yield* generateSequence(65, 90);
-  
-    // a..z
-    yield* generateSequence(97, 122);
-  
-  }
-
-
-const pass = generatePasswordCodes();
-console.log(pass.next());
-  
-   let str = '';
-  
-  for(let code of generatePasswordCodes()) {
-    console.log(code)
-    str += String.fromCharCode(code);
-   }
-   console.log(str);
-  
-//   alert(str); // 0..9A..Za..z
+  //const DATABASE_ANSWER = 4;
+  //console.log(`The answer of the ${question} is ${generator.next(DATABASE_ANSWER).value}`)
+  /generator.throw(new Error("The answer is not found in my database")); // (2)
