@@ -81,19 +81,28 @@
 //   console.log(generator.next(4))
   
  
-  function* gen() {
-    try {
-      let result = yield "2 + 2 = ?"; // (1)
-      alert("The execution does not reach here, because the exception is thrown above");
-    } catch(e) {
-      alert(e); // shows the error
-    }
-  }
+//   function* gen() {
+//     try {
+//       let result = yield "2 + 2 = ?"; // (1)
+//       alert("The execution does not reach here, because the exception is thrown above");
+//     } catch(e) {
+//       alert(e); // shows the error
+//     }
+//   }
   
-  let generator = gen();
+//   let generator = gen();
  
-  let question = generator.next().value;
+//   let question = generator.next().value;
   
-  //const DATABASE_ANSWER = 4;
-  //console.log(`The answer of the ${question} is ${generator.next(DATABASE_ANSWER).value}`)
-  /generator.throw(new Error("The answer is not found in my database")); // (2)
+//   //const DATABASE_ANSWER = 4;
+//   //console.log(`The answer of the ${question} is ${generator.next(DATABASE_ANSWER).value}`)
+//   /generator.throw(new Error("The answer is not found in my database")); // (2)
+
+const getData = function*(){
+    const response = yield fetch('https://jsonplaceholder.typicode.com/todos/1');
+    const data = yield response.json();
+    return data;
+}
+
+const data = getData();
+data.next().value.then(res=>data.next(res).value.then(d=>console.log(d)))
