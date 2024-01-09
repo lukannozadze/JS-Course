@@ -32,3 +32,38 @@ function* test(){
 // console.log(t1.next());
 // console.log(t1.next(7));
 // console.log(t1.next(10));
+
+
+function* generateSequence(start, end) {
+    for (let i = start; i <= end; i++) yield i;
+  }
+  
+  const seq = generateSequence(1,5)
+
+
+  function* generatePasswordCodes() {
+  
+    // 0..9
+    yield* generateSequence(48, 57);
+  
+    // A..Z
+    yield* generateSequence(65, 90);
+  
+    // a..z
+    yield* generateSequence(97, 122);
+  
+  }
+
+
+const pass = generatePasswordCodes();
+console.log(pass.next());
+  
+   let str = '';
+  
+  for(let code of generatePasswordCodes()) {
+    console.log(code)
+    str += String.fromCharCode(code);
+   }
+   console.log(str);
+  
+//   alert(str); // 0..9A..Za..z
