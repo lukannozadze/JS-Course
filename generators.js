@@ -98,11 +98,51 @@
 //   //console.log(`The answer of the ${question} is ${generator.next(DATABASE_ANSWER).value}`)
 //   /generator.throw(new Error("The answer is not found in my database")); // (2)
 
-const getData = function*(){
-    const response = yield fetch('https://jsonplaceholder.typicode.com/todos/1');
-    const data = yield response.json();
-    return data;
-}
+// const getData = function*(){
+//     const response = yield fetch('https://jsonplaceholder.typicode.com/todos/1');
+//     const data = yield response.json();
+//     return data;
+// }
 
-const data = getData();
-data.next().value.then(res=>data.next(res).value.then(d=>console.log(d)))
+// const data = getData();
+// data.next().value.then(res=>data.next(res).value.then(d=>console.log(d)))
+
+
+const fibonacci = function*(){
+    let first = 0; //1
+    let second = 1; //1
+    let third=0; //2
+    while(third <= 144){
+        yield third;
+        first = second; 
+        second = third; 
+        third = first+second;
+    }
+    if(third>144){
+        return;
+    }
+
+}
+const f = fibonacci();
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
+console.log(f.next())
