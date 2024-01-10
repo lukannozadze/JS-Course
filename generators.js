@@ -108,41 +108,63 @@
 // data.next().value.then(res=>data.next(res).value.then(d=>console.log(d)))
 
 
-const fibonacci = function*(){
-    let first = 0; //1
-    let second = 1; //1
-    let third=0; //2
-    while(third <= 144){
-        yield third;
-        first = second; 
-        second = third; 
-        third = first+second;
-    }
-    if(third>144){
-        return;
-    }
+// const fibonacci = function*(){
+//     let first = 0; //1
+//     let second = 1; //1
+//     let third=0; //2
+//     while(third <= 144){
+//         yield third;
+//         first = second; 
+//         second = third; 
+//         third = first+second;
+//     }
+//     if(third>144){
+//         return;
+//     }
 
-}
-const f = fibonacci();
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
-console.log(f.next())
+// }
+// const f = fibonacci();
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+// console.log(f.next())
+
+// function* range(start,end){
+//     for(let i =start; i<= end; i++){
+//         yield i
+//     }
+// }
+// for (let number of range(1, 5)) {
+//     console.log(number); // Should print numbers from 1 to 5
+// }
+
+// function* arrayIterator(array){
+
+//     for(let el of array){
+//         yield el;
+//     }
+// }
+
+// let arr = [1, 2, 3, 4, 5];
+// let iterator = arrayIterator(arr);
+
+// console.log(iterator.next().value); // Should print 1
+// console.log(iterator.next().value); // Should print 2
