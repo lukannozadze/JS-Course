@@ -60,3 +60,32 @@ function sumRange(n) {
   }
   return n + sumRange(n - 1);
 }
+
+//
+const tree = {
+  name: "John",
+  children: [
+    {
+      name: "Jim",
+      children: [],
+    },
+    {
+      name: "Zoe",
+      children: [
+        { name: "Kyle", children: [] },
+        { name: "Sophia", children: [] },
+      ],
+    },
+  ],
+};
+console.log(tree);
+
+function readChildren(obj) {
+  if (obj.children.length == 0) {
+    return;
+  }
+  obj.children.forEach((child) => {
+    console.log(child.name);
+    readChildren(child);
+  });
+}
