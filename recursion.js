@@ -52,3 +52,11 @@ const countDownRecursive = function (n) {
   console.log(n);
   countDownRecursive(n - 1);
 };
+
+//sum range via recursion
+function sumRange(n) {
+  if (n == 1) {
+    return 1;
+  }
+  return n + sumRange(n - 1);
+}
