@@ -27,4 +27,26 @@ console.log(!!'false'==!!'true') //true
  console.log(true =='true') //false
  console.log(false == 'false') //false
 
- 
+ ///////////////////////////////////////
+
+ // +'a' is converted in number by javascript and result is NaN
+ console.log('b' + 'a' + + 'a' +'a'); // -> baNaNa
+
+console.log('foo' + + 'bar');
+
+//NaN is not a NaN
+/////////////////////
+console.log(NaN === NaN) // -> false
+console.log(typeof NaN) // -> number
+
+///////////////////////
+// Object.is() determines if two values have the same value or not.
+// It works similar to the === operator but there are a few weird cases:
+console.log(Object.is(NaN,NaN)); // -> true
+console.log(NaN === NaN); // -> false
+
+console.log(Object.is(-0,0)); // -> false
+console.log(-0 === 0); // -> true
+
+Object.is(NaN, 0 / 0); // -> true
+NaN === 0 / 0; // -> false
